@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <!-- Header -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MOON LOOKS - Home</title>
+    <!-- Link to Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='calculator.css') }}">
+  </head>
+  <body>
+
+    <header>
+      <div class="left-header">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="MOON LOOKS Logo" class="logo">
+        <h1>MOON LOOKS</h1>
+      </div>  
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li>
+            <a href="{{ url_for('designs') }}">Designs</a>
+            <ul class="dropdown">
+              <li><a href="{{ url_for('villas_floor_plans') }}">Villas Floor Plans</a></li>
+              <li><a href="{{ url_for('flats_floor_plans') }}">Flats Floor Plans</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+      </nav> 
+    </header>
+
+
+
+    <div class="sub-nav-bar">
+      <nav class="sub-nav">
+          <ul>
+              <li><a href="{{ url_for('team') }}">Our Team</a></li>
+          </ul>
+      </nav>
+    </div>
+  
+    
+    
+
+
+
+    <!-- Main -->
+    <div class="content">
+      <section id="home">
+        <p>Welcome to MOON LOOKS! Our website is your go-to destination for innovative and personalized home design solutions. We specialize in helping you bring your dream home to life by offering a wide range of architectural and interior design options. Whether you are seeking modern, contemporary, or traditional styles, we provide an extensive collection of designs to match your unique taste and preferences.</p>
+        <p>At MOON LOOKS, we understand that a home is more than just a structure; it's a reflection of your personality and lifestyle. Our team of skilled designers and architects work meticulously to create spaces that are not only aesthetically pleasing but also highly functional and comfortable. From initial concept to final execution, we are committed to delivering top-quality design services that cater to your specific needs.</p>
+        <p>Explore our diverse portfolio to find inspiration and professional tips that will help you transform your living spaces. Our user-friendly platform allows you to browse through various design ideas, gather insights, and connect with our experts for personalized advice. Join us on this exciting journey and let MOON LOOKS be your partner in crafting a beautiful, stylish, and functional home that you and your family will love for years to come.</p>
+      </section>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <br><br>
+      <div class="wrapper">
+        <div class="design-grid">
+          
+          <a href="{{ url_for('living_room') }}" class="design-card">
+            <img src="{{ url_for('static', filename='living-room.png') }}" alt="Living Room">
+            <div class="card-info">
+                <h3>Living Room</h3>
+            </div>
+          </a>
+          
+          <a href="{{ url_for('kitchen') }}" class="design-card">
+            <img src="{{ url_for('static', filename='kitchen.jpg') }}" alt="Kitchen">
+            <div class="card-info">
+                <h3>Kitchen</h3>
+            </div>
+          </a>
+          
+          <a href="{{ url_for('master_bedroom') }}" class="design-card">
+            <img src="{{ url_for('static', filename='master-bedroom.png') }}" alt="Master Bedroom">
+            <div class="card-info">
+                <h3>Master Bedroom</h3>
+            </div>
+          </a>
+          
+          <a href="{{ url_for('dining_room') }}" class="design-card">
+            <img src="{{ url_for('static', filename='dining-room.png') }}" alt="Dining Room">
+            <div class="card-info">
+                <h3>Dining Room</h3>
+            </div>
+          </a>
+          
+          <a href="{{ url_for('kids_bedroom') }}" class="design-card">
+            <img src="{{ url_for('static', filename='kids-room.png') }}" alt="Kid's Bedroom">
+            <div class="card-info">
+                <h3>Kid's Bedroom</h3>
+            </div>
+          </a>
+          
+          <a href="{{ url_for('wardrobe') }}" class="design-card">
+            <img src="{{ url_for('static', filename='wardrobe.jpg') }}" alt="Wardrobe">
+            <div class="card-info">
+                <h3>Wardrobe</h3>
+            </div>
+          </a>
+      
+        </div>
+      </div>
+      
+<br>
+<br>
+<br>
+<br>
+<div class="cal-wrapper">
+  
+  <!-- Area Calculator -->
+  <div class="calculator-container area-calculator">
+    <h1>Area Calculator</h1>
+    <div class="result-section">
+      <p>Result</p>
+      <p id="result">Area: <span id="calculatedArea">0</span> sq ft</p>
+    </div>
+
+    <!-- Unit Selection -->
+    <div class="unit-section">
+      <label>Select Unit:</label>
+      <input type="radio" id="meters" name="unit" value="meters">
+      <label for="meters">Meters</label>
+      <input type="radio" id="feet" name="unit" value="feet" checked>
+      <label for="feet">Feet</label>
+    </div>
+
+    <!-- Input Section for Length and Width -->
+    <div class="input-section">
+      <div class="input-group">
+        <label for="length">Length (l)</label>
+        <input type="number" id="length" placeholder="Enter length" required>
+      </div>
+      <div class="input-group">
+        <label for="width">Width (w)</label>
+        <input type="number" id="width" placeholder="Enter width" required>
+      </div>
+    </div>
+  </div>
+
+  <!-- Home Build Cost Calculator -->
+  <div class="calculator-container cost-calculator">
+    <h1>Cost Calculator</h1>
+    <form id="costCalculator">
+      <div class="input-section">
+        <!-- Type Selection for Cost -->
+        <div class="input-group">
+          <label for="type">Select Construction Type:</label>
+          <select id="type" name="type" onchange="calculateTotalCost()">
+            <option value="1450">Simple</option>
+            <option value="2800">Moderate</option>
+            <option value="5800">Luxury</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="floors">Number of Floors:</label>
+          <input type="number" id="floors" name="floors" value="1" min="1" oninput="calculateTotalCost()">
+        </div>
+      </div>
+      
+      <div class="result-section cost-result">
+        <h3>Total Estimated Cost: <span id="totalCost">0</span> INR</h3>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <!-- User form -->
+<div class="professional-form-section">
+  <h2>Get Started with Your Project</h2>
+  <p>Fill out the form below to let us know your requirements, and our team will get back to you shortly.</p>
+  <form action="{{ url_for('submit_project_form') }}" method="post">
+
+  <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+    <label for="project-type">Type of Project:</label>
+    <select id="project-type" name="project_type" required>
+      <option value="residential">Floor Plans</option>
+      <option value="interior">Interior Design</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="details">Project Details:</label>
+    <textarea id="details" name="details" rows="4" placeholder="Briefly describe your project requirements..."></textarea>
+
+    <button type="submit">Submit Your Requirements</button>
+  </form>
+</div>
+
+
+
+      <br><br>
+<br><br>
+       <br><br>
+<br><br>
+
+      <div class="ceo-cto-container">
+        <img src="{{ url_for('static', filename='ceo_cto_photo.png') }}" alt="CEO & CTO Photo" class="ceo-cto-photo">
+        <div class="message">
+          <h3>Message from the CTO</h3>
+          <p>At MOON LOOKS, we believe that great design has the power to transform lives. Our mission is to bring your vision to life by creating beautiful and functional spaces that truly reflect your unique style and needs. We are passionate about delivering exceptional design solutions and are committed to providing our clients with an outstanding experience from start to finish.</p>
+          <p>Thank you for choosing MOON LOOKS. We look forward to working with you to create the home of your dreams.</p>
+          <p><strong>UJJWAL KULSHRESTHA<br>CTO, MOON LOOKS</strong></p>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+    <!-- Include AI Chatbox Script -->
+    <script src="https://widget.cxgenie.ai/widget.js" data-aid="bac054ad-1035-4a6e-94af-dfe12376fb0c" data-lang="en"></script>
+
+    <!-- Include Calculator Script -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
+
+    <!-- Footer -->
+    <footer class="professional-footer">
+      <div class="footer-container">
+          <div class="footer-section about-us">
+              <h3>About Us</h3>
+              <p>At MOON LOOKS, we specialize in architectural design, interior planning, and cost estimation for home building projects. Our commitment to quality ensures your dream space becomes a reality.</p>
+          </div>
+  
+          <div class="footer-section quick-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="{{ url_for('home') }}">Home</a></li>
+                  <li><a href="{{ url_for('designs') }}">Designs</a></li>
+                  <li><a href="{{ url_for('villas_floor_plans') }}">Villas Floor Plans</a></li>
+                  <li><a href="{{ url_for('flats_floor_plans') }}">Flats Floor Plans</a></li>
+                  <li><a href="{{ url_for('about') }}">About Us</a></li>
+                  <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-section contact-us">
+              <h3>Contact Us</h3>
+              <p>Email: contact@moonlooks.com</p>
+              <p>Address: Greater Noida, Uttar Pradesh</p>
+          </div>
+  
+          <div class="footer-section Join Us">
+            <h3>Join Us</h3>
+            <div class="qr-code-wrapper">
+              <div class="qr-container">
+                <a href="https://wa.me/7302888237" target="_blank" title="Click to View">
+                  <img src="{{ url_for('static', filename='whatsapp_qr.png') }}" alt="WhatsApp QR Code" class="qr-code">
+                  <span class="qr-hover-text">Click to View</span>
+                </a>
+                <p class="qr-label">WhatsApp</p>
+              </div>
+              <div class="qr-container">
+                <a href="https://www.instagram.com/_moon_looks_" target="_blank" title="Click to View">
+                  <img src="{{ url_for('static', filename='instagram_qr.png') }}" alt="Instagram QR Code" class="qr-code">
+                  <span class="qr-hover-text">Click to View</span>
+                </a>
+                <p class="qr-label">Instagram</p>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <p>&copy; 2024 MOON LOOKS. All Rights Reserved.</p>
+      </div>
+    </footer>
+  
+
+  </body>
+</html>

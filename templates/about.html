@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>MOON LOOKS - About Us</title>
+
+  <!-- Link to Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+      <div class="left-header">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="MOON LOOKS Logo" class="logo">
+        <h1>MOON LOOKS</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li>
+            <a href="{{ url_for('designs') }}">Designs</a>
+            <ul class="dropdown">
+              <li><a href="{{ url_for('villas_floor_plans') }}">Villas Floor Plans</a></li>
+              <li><a href="{{ url_for('flats_floor_plans') }}">Flats Floor Plans</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+      </nav> 
+    </header>
+    <div class="sub-nav-bar">
+      <nav class="sub-nav">
+          <ul>
+              <li><a href="{{ url_for('team') }}">Our Team</a></li>
+          </ul>
+      </nav>
+    </div>
+
+    <div class="about_us_main_pic">
+    <img src="{{ url_for('static', filename='about_us_main.jpg') }}" data-hd="{{ url_for('static', filename='about_us_main.jpg') }}" alt="about_us_main_pic">
+  </div>
+
+
+  
+  <div class="content_about_us">
+    <section>
+      <h2>About Us</h2>
+      <p>At MOON LOOKS, we are passionate about creating homes that are not just buildings but are reflections of your dreams and lifestyle. With a team of skilled architects and designers, we specialize in delivering personalized home designs that combine functionality, aesthetics, and innovation. Our goal is to help you build spaces that are comfortable, stylish, and truly your own.</p>
+      <p>Founded on the principles of quality, integrity, and customer satisfaction, MOON LOOKS has become a trusted name in the home design industry. Whether you are looking for modern, contemporary, or traditional designs, our diverse portfolio and expert team will ensure that your vision is brought to life with precision and creativity.</p>
+      <p>We believe that every home tells a story, and we are here to help you tell yours. Join us on this journey to create a home that you'll cherish for years to come.</p>
+      <p><strong>UJJWAL KULSHRESTHA<br>CTO, MOON LOOKS</strong></p>
+
+      <br></br>
+
+      <br></br>
+
+      <h2>How MOON LOOKS Started</h2>
+      <p>MOON LOOKS began with a vision to redefine architectural design by combining modern aesthetics with functionality. Founded by Ujjwal Kulshrestha, who had a deep passion for home planning, the company initially focused on offering customized home designs that catered to the unique needs of every client.</p>
+      <p>From planning his own family house in Agra to addressing the individual tastes of clients, Ujjwal realized there was a gap in delivering personalized, beautiful homes that reflect both luxury and comfort. With a growing team of architects and designers, MOON LOOKS quickly expanded its services, delivering not only floor plans but also interior designs, ensuring every home is a masterpiece in both design and utility. The company is now recognized for its innovative approach and customer-centric solutions.</p>
+
+      <p><strong>UJJWAL KULSHRESTHA<br>CTO, MOON LOOKS</strong></p>
+
+
+    </section>
+  </div>
+  <!-- Include AI Chatbox Script -->
+  <script src="https://widget.cxgenie.ai/widget.js" data-aid="bac054ad-1035-4a6e-94af-dfe12376fb0c" data-lang="en"></script>
+
+
+   <!-- Footer -->
+   <footer class="professional-footer">
+    <div class="footer-container">
+        <div class="footer-section about-us">
+            <h3>About Us</h3>
+            <p>At MOON LOOKS, we specialize in architectural design, interior planning, and cost estimation for home building projects. Our commitment to quality ensures your dream space becomes a reality.</p>
+        </div>
+
+        <div class="footer-section quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('designs') }}">Designs</a></li>
+                <li><a href="{{ url_for('villas_floor_plans') }}">Villas Floor Plans</a></li>
+                <li><a href="{{ url_for('flats_floor_plans') }}">Flats Floor Plans</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact-us">
+            <h3>Contact Us</h3>
+            <p>Email: contact@moonlooks.com</p>
+            <p>Address: Greater Noida, Uttar Pradesh</p>
+        </div>
+
+        <div class="footer-section Join Us">
+          <h3>Join Us</h3>
+          <div class="qr-code-wrapper">
+            <div class="qr-container">
+              <a href="https://wa.me/7302888237" target="_blank" title="Click to View">
+                <img src="{{ url_for('static', filename='whatsapp_qr.png') }}" alt="WhatsApp QR Code" class="qr-code">
+                <span class="qr-hover-text">Click to View</span>
+              </a>
+              <p class="qr-label">WhatsApp</p>
+            </div>
+            <div class="qr-container">
+              <a href="https://www.instagram.com/_moon_looks_" target="_blank" title="Click to View">
+                <img src="{{ url_for('static', filename='instagram_qr.png') }}" alt="Instagram QR Code" class="qr-code">
+                <span class="qr-hover-text">Click to View</span>
+              </a>
+              <p class="qr-label">Instagram</p>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 MOON LOOKS. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

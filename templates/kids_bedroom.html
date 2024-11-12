@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <!-- Header -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MOON LOOKS - Home - living_room</title>
+    <!-- Link to Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='calculator.css') }}">
+  </head>
+  <body>
+
+    <header>
+      <div class="left-header">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="MOON LOOKS Logo" class="logo">
+        <h1>MOON LOOKS</h1>
+      </div>  
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li>
+            <a href="{{ url_for('designs') }}">Designs</a>
+            <ul class="dropdown">
+              <li><a href="{{ url_for('villas_floor_plans') }}">Villas Floor Plans</a></li>
+              <li><a href="{{ url_for('flats_floor_plans') }}">Flats Floor Plans</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+      </nav> 
+    </header>
+
+
+
+    <div class="sub-nav-bar">
+      <nav class="sub-nav">
+          <ul>
+              <li><a href="{{ url_for('team') }}">Our Team</a></li>
+          </ul>
+      </nav>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  <div class="content">
+    <section id="villasFloorPlans">
+      <h2>Kid Bedroom Designs</h2>
+      <p class="section-description">Explore our kids' room designs, where imagination meets functionality, creating fun, safe, and inspiring spaces for children to learn and play.</p>
+      <br>
+      <br>
+      
+      <div class="design-gallery">
+        {% for i in range(1, 13) %}
+        <figure class="hover-popup">
+          <img src="{{ url_for('static', filename='pics/kid/kid' ~ i ~ '.jpg') }}" alt="kids Room Design {{ i }}">
+        </figure>
+        {% endfor %}
+          
+      </div>
+    </section>
+  </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+    <!-- Include AI Chatbox Script -->
+    <script src="https://widget.cxgenie.ai/widget.js" data-aid="bac054ad-1035-4a6e-94af-dfe12376fb0c" data-lang="en"></script>
+
+    
+    
+
+    <!-- Footer -->
+    <footer class="professional-footer">
+      <div class="footer-container">
+          <div class="footer-section about-us">
+              <h3>About Us</h3>
+              <p>At MOON LOOKS, we specialize in architectural design, interior planning, and cost estimation for home building projects. Our commitment to quality ensures your dream space becomes a reality.</p>
+          </div>
+  
+          <div class="footer-section quick-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="{{ url_for('home') }}">Home</a></li>
+                  <li><a href="{{ url_for('designs') }}">Designs</a></li>
+                  <li><a href="{{ url_for('villas_floor_plans') }}">Villas Floor Plans</a></li>
+                  <li><a href="{{ url_for('flats_floor_plans') }}">Flats Floor Plans</a></li>
+                  <li><a href="{{ url_for('about') }}">About Us</a></li>
+                  <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-section contact-us">
+              <h3>Contact Us</h3>
+              <p>Email: contact@moonlooks.com</p>
+              <p>Address: Greater Noida, Uttar Pradesh</p>
+          </div>
+  
+          <div class="footer-section Join Us">
+            <h3>Join Us</h3>
+            <div class="qr-code-wrapper">
+              <div class="qr-container">
+                <a href="https://wa.me/7302888237" target="_blank" title="Click to View">
+                  <img src="{{ url_for('static', filename='whatsapp_qr.png') }}" alt="WhatsApp QR Code" class="qr-code">
+                  <span class="qr-hover-text">Click to View</span>
+                </a>
+                <p class="qr-label">WhatsApp</p>
+              </div>
+              <div class="qr-container">
+                <a href="https://www.instagram.com/_moon_looks_" target="_blank" title="Click to View">
+                  <img src="{{ url_for('static', filename='instagram_qr.png') }}" alt="Instagram QR Code" class="qr-code">
+                  <span class="qr-hover-text">Click to View</span>
+                </a>
+                <p class="qr-label">Instagram</p>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <p>&copy; 2024 MOON LOOKS. All Rights Reserved.</p>
+      </div>
+    </footer>
+  
+
+  </body>
+</html>
